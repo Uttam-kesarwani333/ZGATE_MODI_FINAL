@@ -1,0 +1,141 @@
+unmanaged implementation in class zbp_ge_r_head_u unique;
+strict ( 2 );
+
+define behavior for zge_r_head alias Header
+//persistent table zge_hdr
+
+lock master
+authorization master ( global )
+//etag master <field_name>
+late numbering
+{
+  create;
+  update;
+  delete;
+
+  //  determination setItemH on modify { create; }
+
+  //  determination setStatusToOpen on modify { field PurchasingDoc; }
+
+
+
+
+  // static feature control - read only
+  field ( readonly ) GateNumber;
+  //  field ( readonly : update ) GateNumber;
+
+  // Static feature control - Mandatory
+  field ( mandatory ) PurchasingDoc, VendorInvoiceNo, VendorInvoiceDt;
+
+  association _Items { create; }
+
+  //  side effects { field PurchasingDoc affects entity _Items; }
+  //  side effects { field PurchasingDoc affects field Supplier, field Plant; }
+
+  mapping for zge_hdr control zge_s_hdr_x corresponding
+
+    {
+      GateNumber        = gate_number;
+      GateType          = gate_type;
+      GateStatus        = gate_status;
+      IsCancelled       = is_cancelled;
+      VehichleNo        = vehichle_no;
+      LrRrNo            = lr_rr_no;
+      BillOfLanding     = bill_of_landing;
+      VendorInvoiceNo   = vendor_invoice_no;
+      VendorInvoiceDt   = vendor_invoice_dt;
+      GateInDate        = gate_in_date;
+      GateInTime        = gate_in_time;
+      GateOutDate       = gate_out_date;
+      GateOutTime       = gate_out_time;
+      PurchasingDoc     = ebeln;
+      SalesDocument     = vbeln;
+      Supplier          = lifnr;
+      SupplierName      = supplier_name;
+      Customer          = kunnr;
+      CustomerName      = customer_name;
+      plant             = werks;
+      CreatedBy         = created_by;
+      CreatedOn         = created_on;
+      CreationTime      = creation_time;
+      GrossWeight       = gross_weight;
+      TareWeight        = tare_weight;
+      PackingUnit       = packing_unit;
+      NetWeight         = net_weight;
+      WeightRequired    = weight_required;
+      WeightSkip        = weight_skip;
+      InitWtDate        = init_wt_date;
+      InitWtTime        = init_wt_time;
+      FinalWtDate       = final_wt_date;
+      FinalWtTime       = final_wt_time;
+      VendorGrossWeight = vendor_gross_weight;
+      VendorTareWeight  = vendor_tare_weight;
+      Grn               = grn;
+      GrnYear           = grn_year;
+      Purpose           = purpose;
+      PersonConcerned   = person_concerned;
+      PersonArrived     = person_arrived;
+      ContactNumber     = contact_number;
+      NumberOfPerson    = number_of_person;
+      ReturnDate        = return_date;
+      ReturnTime        = return_time;
+      DriverName        = driver_name;
+      DriverNumber      = driver_number;
+      DriverLic         = driver_lic;
+      Transporter       = transporter;
+      TransporterName   = transporter_name;
+      VehicleType       = vehicle_type;
+      Remark            = remark;
+      CancelRemark      = cancel_remark;
+      Visitor           = visitor;
+      VendorSlip        = vendor_slip;
+      PreGrnQc          = pre_grn_qc;
+      ReportingDate     = reporting_date;
+      ReportingTime     = reporting_time;
+      RefDocNumber      = ref_doc_number;
+      GatePassType      = gate_pass_type;
+      EntryGate         = entry_gate;
+      DelFlag           = del_flag;
+      DelRemark         = del_remark;
+    }
+
+
+}
+
+define behavior for zge_r_item alias Item
+//persistent table zge_itm
+lock dependent by _Head
+authorization dependent by _Head
+//etag master <field_name>
+
+
+late numbering
+{
+  update;
+  delete;
+  field ( readonly ) GateNumber, ItemNumber;
+  association _Head;
+  //  determination setItem on modify { create; }
+  //
+  //  side effects { field Material affects field MaterialDescription, field Meins, field QtyOrdered;  }
+
+  //  determination postInspectionLot on modify { create; }
+  //
+  //  side effects { field Material affects field _Head.PreGrnQc; }
+
+  mapping for zge_itm corresponding
+    {
+      GateNumber          = gate_number;
+      ItemNumber          = item_number;
+      ItemRemark          = item_remark;
+      PurchasingDoc       = ebeln;
+      PurchaseOrderItem   = ebelp;
+      Material            = matnr;
+      MaterialDescription = maktx;
+      QtyIn               = qty_in;
+      QtyOut              = qty_out;
+      QtyOrdered          = qty_ordered;
+      QtyReceived         = qty_received;
+      TotalGeQty          = total_ge_qty;
+    }
+}

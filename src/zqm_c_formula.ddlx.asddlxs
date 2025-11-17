@@ -1,0 +1,67 @@
+@Metadata.layer: #PARTNER
+annotate entity ZQM_C_FORMULA with
+{
+
+  @UI.facet: [{ label: 'Provide Data',
+                id: 'idPDFacet',
+                type: #COLLECTION,
+                position: 10 },
+                 { label: 'Basic Data',
+                   id: 'idBDFacet',
+                   type: #FIELDGROUP_REFERENCE,
+                   position: 10,
+                   parentId: 'idPDFacet',
+                   targetQualifier: 'tqBData' }
+                ]
+
+  @UI.lineItem: [{ position: 10,
+                   label: 'Serial No.' }]
+//  @UI.selectionField: [{ position: 10 }]
+  @UI.fieldGroup: [{ position: 10, qualifier: 'tqBData', label: 'Serial No.' }]
+  sno;
+
+  @UI.lineItem: [{ position: 15, label: 'Plant' }]
+  @UI.fieldGroup: [{ position: 15, qualifier: 'tqBData', label: 'Plant' }]
+  Werks;
+
+  @UI.lineItem: [{ position: 20, label: 'Material Group' }]
+  //  @UI.selectionField: [{ position: 20 }]
+  @UI.fieldGroup: [{ position: 20, qualifier: 'tqBData', label: 'Material Group' }]
+  Matkl;
+
+  @UI.lineItem: [{ position: 30, label: 'QC Parameter' }]
+  @UI.fieldGroup: [{ position: 30, qualifier: 'tqBData', label: 'QC Parameter' }]
+  Verwmerkm;
+
+  @UI.lineItem: [{ position: 40, label: 'QC Parameter Description' }]
+  @UI.fieldGroup: [{ position: 40, qualifier: 'tqBData', label: 'QC Parameter Description' }]
+  Kurztext;
+
+  @UI.lineItem: [{ position: 50, label: 'Only Post GRN' }]
+  @UI.fieldGroup: [{ position: 50, qualifier: 'tqBData', label: 'Only Post GRN' }]
+  OnlyPost;
+
+  @UI.lineItem: [{ position: 60, label: 'Formula' }]
+  @UI.fieldGroup: [{ position: 60, qualifier: 'tqBData', label: 'Formula' }]
+  Rejection;
+
+  @UI.lineItem: [{ position: 70, label: 'Dependent QC Parameter' }]
+  @UI.fieldGroup: [{ position: 70, qualifier: 'tqBData', label: 'Dependent QC Parameter' }]
+  DepVerwmerkm;
+
+  @UI.lineItem: [{ position: 80, label: 'Dependent QC Parameter Description' }]
+  @UI.fieldGroup: [{ position: 80, qualifier: 'tqBData', label: 'Dependent QC Parameter Description' }]
+  DepKurztext;
+
+  @UI.lineItem: [{ position: 90,label: 'Only On Avg.' }]
+  @UI.fieldGroup: [{ position: 90, qualifier: 'tqBData',label: 'Only On Avg.' }]
+  OnAvg;
+
+  @UI.lineItem: [{ position: 100, label: 'Base QC Parameter' }]
+  @UI.fieldGroup: [{ position: 100, qualifier: 'tqBData', label: 'Base QC Parameter' }]
+  BaseQc;
+
+  @UI.lineItem: [{ position: 110, label: 'Base QC Parameter Description' }]
+  @UI.fieldGroup: [{ position: 110, qualifier: 'tqBData', label: 'Base QC Parameter Description' }]
+  BaseQcKurztext;
+}

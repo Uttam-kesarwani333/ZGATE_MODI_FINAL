@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Weighment interface"
+  },
+  "ui5AppDetails": {
+    "appId": "weighment"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_A6AFC386EFE4D6462C50F92EB3D8C85F4259E5D9_TM",
+    "semanticObject": "zsemobj_wt",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_A6AFC386EFE4D6462C50F92EB3D8C85F4259E5D9_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Weighment interface"
+      }
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Gate Entry"
+  },
+  "ui5AppDetails": {
+    "appId": "gateentry"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_87CBA9A82B65ED6A4E51D874408CFBEFEC73D425_TM",
+    "semanticObject": "zso_gateentry",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_87CBA9A82B65ED6A4E51D874408CFBEFEC73D425_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Gate Entry"
+      }
+    }
+  ]
+}

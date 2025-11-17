@@ -1,0 +1,9 @@
+CLASS zbp_ge_r_grn_head DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zge_r_grn_head.
+protected section.
+private section.
+ENDCLASS.
+
+
+
+CLASS ZBP_GE_R_GRN_HEAD IMPLEMENTATION.
+ENDCLASS.

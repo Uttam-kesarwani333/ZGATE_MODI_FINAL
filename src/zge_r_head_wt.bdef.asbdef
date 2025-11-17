@@ -1,0 +1,76 @@
+unmanaged implementation in class zbp_ge_r_head_wt unique;
+strict ( 2 );
+
+define behavior for zge_r_head_wt alias Weight
+//late numbering
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  //  create;
+  update;
+  delete;
+  field ( readonly ) GateNumber;
+
+  mapping for zge_hdr control zge_s_hdr_x corresponding
+    {
+      GateNumber           = gate_number;
+      GateType             = gate_type;
+      GateStatus           = gate_status;
+      IsCancelled          = is_cancelled;
+      VehichleNo           = vehichle_no;
+      LrRrNo               = lr_rr_no;
+      BillOfLanding        = bill_of_landing;
+      VendorInvoiceNo      = vendor_invoice_no;
+      VendorInvoiceDt      = vendor_invoice_dt;
+      GateInDate           = gate_in_date;
+      GateInTime           = gate_in_time;
+      //      GateOutDate       = gate_out_date;
+      //      GateOutTime       = gate_out_time;
+      PurchasingDoc        = ebeln;
+      SalesDocument        = vbeln;
+      Supplier             = lifnr;
+      SupplierName         = supplier_name;
+      Customer             = kunnr;
+      plant                = werks;
+      //      CreatedBy         = created_by;
+      //      CreatedOn         = created_on;
+      //      CreationTime      = creation_time;
+      GrossWeight          = gross_weight;
+      TareWeight           = tare_weight;
+      PackingUnit          = packing_unit;
+      NetWeight            = net_weight;
+      WeightRequired       = weight_required;
+      WeightSkip           = weight_skip;
+      InitWtDate           = init_wt_date;
+      InitWtTime           = init_wt_time;
+      FinalWtDate          = final_wt_date;
+      FinalWtTime          = final_wt_time;
+      VendorGrossWeight    = vendor_gross_weight;
+      VendorTareWeight     = vendor_tare_weight;
+      //      Grn               = grn;
+      //      GrnYear           = grn_year;
+      //      Purpose           = purpose;
+      //      PersonConcerned   = person_concerned;
+      //      PersonArrived     = person_arrived;
+      //      ContactNumber     = contact_number;
+      //      NumberOfPerson    = number_of_person;
+      //      ReturnDate        = return_date;
+      //      ReturnTime        = return_time;
+      DriverName           = driver_name;
+      DriverNumber         = driver_number;
+      DriverLic            = driver_lic;
+      Transporter          = transporter;
+      TransporterName      = transporter_name;
+      VehicleType          = vehicle_type;
+      Remark               = remark;
+      CancelRemark         = cancel_remark;
+      //      Visitor           = visitor;
+      VendorSlip           = vendor_slip;
+      PreGrnQc             = pre_grn_qc;
+      GatePassType         = gate_pass_type;
+      EntryGate            = entry_gate;
+      InitWeighBridgeCode  = init_weighbridgecode;
+      FinalWeighBridgeCode = final_weighbridgecode;
+    }
+}

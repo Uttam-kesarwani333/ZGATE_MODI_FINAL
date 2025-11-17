@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZI_GateEntryMaterialGr_S'
+define service ZUI_GATEENTRYMATERIALGR {
+  expose ZI_GATEENTRYMATERIALGR_S as GateEntryMateriaAll;
+  expose ZI_GATEENTRYMATERIALGR as GateEntryMaterialGr;
+}

@@ -1,0 +1,219 @@
+@Metadata.layer: #PARTNER
+@UI.headerInfo:{
+    typeName: 'GateEntry',
+    typeNamePlural: 'GateEntrys',
+    title: { value: 'GateNumber' }
+//    description: { value: '_Customer.FirstName' }
+ }
+annotate entity zge_c_head with
+{
+  @UI.facet: [
+              {
+                  purpose: #HEADER,
+                  type: #DATAPOINT_REFERENCE,
+                  label: 'Gate Number',
+                  position: 10,
+                  targetQualifier: 'genum_data'
+              },
+              {
+                  purpose: #HEADER,
+                  type: #DATAPOINT_REFERENCE,
+                  label: 'Status',
+                  position: 20,
+                  targetQualifier: 'status'
+              },
+               {
+                 purpose: #STANDARD,
+                 label: 'Header',
+                 id: 'idHeadFacet',
+                 type: #COLLECTION,
+                 position: 10
+                },
+                      {
+                       purpose: #STANDARD,
+                       label : 'Order',
+                       id: 'idHd1Facet',
+                       position: 10,
+                       type: #IDENTIFICATION_REFERENCE,
+                       parentId: 'idHeadFacet'
+  //                       targetQualifier: 'tqHd1'
+                      },
+                      {
+                       purpose: #STANDARD,
+                       id: 'idHd2Facet',
+                       label : 'Vendor Data',
+                       position: 20,
+                       type: #FIELDGROUP_REFERENCE,
+                       parentId: 'idHeadFacet',
+                       targetQualifier: 'tqHd2'
+                      },
+                      {
+                       purpose: #STANDARD,
+                       id: 'idHd3Facet',
+                       label : 'Dates',
+                       position: 30,
+                       type: #FIELDGROUP_REFERENCE,
+                       parentId: 'idHeadFacet',
+                       targetQualifier: 'tqHd3'
+                      },
+                  {
+                    purpose: #STANDARD,
+                    label: 'Items',
+  //                    id: 'idItems',
+                    type: #LINEITEM_REFERENCE,
+                    position: 20,
+                    targetElement: '_Items'
+                  }
+                ]
+
+
+  @UI.lineItem: [{ position: 10 }]
+  @UI.selectionField: [{ position: 10 }]
+
+  //  @UI.fieldGroup: [{ position: 20,  qualifier: 'tqHd1'  }]
+  @UI.identification: [{ position: 20 }]
+  @UI.dataPoint: { qualifier: 'genum_data', title: 'Gate Entry' }
+  @Consumption.valueHelpDefinition: [{ entity.name: 'zge_i_genum', entity.element: 'GateNumber' }]
+  GateNumber;
+  @UI.lineItem: [{ position: 30 }]
+  @UI.selectionField: [{ position: 30 }]
+  @UI.identification: [{ position: 90 }]  
+  @Consumption.valueHelpDefinition: [{ entity.name: 'zge_ce_typevh', entity.element: 'gate_type' }]
+  GateType;
+  @UI.lineItem: [{ position: 50 }]
+  @UI.selectionField: [{ position: 70 }]
+  //  @UI.fieldGroup: [{ position: 60,  qualifier: 'tqHd1',label: 'GE Status '  }]
+  @UI.identification: [{ position: 60 }]
+  @UI.dataPoint: { title: 'Gate Status', qualifier: 'status' }
+  @Consumption.valueHelpDefinition: [{ entity.name: 'zge_ce_statusvh', entity.element: 'status' }]
+  GateStatus;
+  @UI.lineItem: [ { hidden: true } ]
+  IsCancelled;
+  @UI.lineItem: [ { hidden: true } ]
+
+  @UI.fieldGroup: [{ position: 30,  qualifier: 'tqHd1',label: 'Truck No '  }]
+  VehichleNo;
+  @UI.lineItem: [ { hidden: true } ]
+  @UI.fieldGroup: [{ position: 20,  qualifier: 'tqHd2', label: 'LR/RR No '  }]
+  LrRrNo;
+  @UI.lineItem: [ { hidden: true } ]
+  @UI.fieldGroup: [{ position: 20,  qualifier: 'tqHd3',label: 'Bill of Landing '  }]
+  BillOfLanding;
+  @UI.lineItem: [ { hidden: true } ]
+  @UI.fieldGroup: [{ position: 30,  qualifier: 'tqHd2',label: 'Vendor Invoice '  }]
+  VendorInvoiceNo;
+  @UI.lineItem: [ { hidden: true } ]
+  @UI.fieldGroup: [{ position: 30,  qualifier: 'tqHd3',label: 'Vendor Invoice Date '  }]
+  VendorInvoiceDt;
+  @UI.lineItem: [ { hidden: true } ]
+  @UI.fieldGroup: [{ position: 10,  qualifier: 'tqHd2',label: 'Gate In Date '  }]
+  GateInDate;
+  @UI.lineItem: [ { hidden: true } ]
+  @UI.fieldGroup: [{ position: 10,  qualifier: 'tqHd3',label: 'Gate In Time '  }]
+  GateInTime;
+  @UI.lineItem: [ { hidden: true } ]
+  GateOutDate;
+  @UI.lineItem: [ { hidden: true } ]
+  GateOutTime;
+  @UI.lineItem: [{ position: 40 }]
+  @UI.selectionField: [{ position: 50 }]
+
+  //  @UI.fieldGroup: [{ position: 10,  qualifier: 'tqHd1',label: 'Order Number '  }]
+  @UI.identification: [{ position: 10 }]
+  @Consumption.valueHelpDefinition: [{ entity.name: 'zge_i_pohead', entity.element: 'PurchasingDoc',useForValidation: true  }]
+  PurchasingDoc;
+  @UI.selectionField: [{ position: 60 }]
+  @UI.lineItem: [ { hidden: true } ]
+  SalesDocument;
+  @UI.lineItem: [ { hidden: true } ]
+  @UI.identification: [{ position: 80 }]
+  @UI.fieldGroup: [{ position: 40,  qualifier: 'tqHd1'  }]
+  @Consumption.valueHelpDefinition: [{ entity.name: 'I_Supplier',entity.element: 'Supplier',useForValidation: true  }]
+  Supplier;
+  @UI.lineItem: [ { hidden: true } ]
+  SupplierName;
+  @UI.lineItem: [ { hidden: true } ]
+  Customer;
+  @UI.lineItem: [{ position: 50 }]
+  @UI.selectionField: [{ position: 40 }]
+  @UI.identification: [{ position: 60 }]
+  @UI.fieldGroup: [{ position: 50,  qualifier: 'tqHd1'  }]
+  Plant;
+  @UI.lineItem: [ { hidden: true } ]
+  @UI.fieldGroup: [{ position: 60,  qualifier: 'tqHd2',label: 'Gate User '  }]
+  CreatedBy;
+  @UI.lineItem: [{ position: 20,
+                   label: 'Date' }]
+
+  @UI.selectionField: [{ position: 20 }]
+  CreatedOn;
+  @UI.lineItem: [ { hidden: true } ]
+  CreationTime;
+  @UI.lineItem: [ { hidden: true } ]
+  GrossWeight;
+  @UI.lineItem: [ { hidden: true } ]
+  TareWeight;
+  @UI.lineItem: [ { hidden: true } ]
+  PackingUnit;
+  @UI.lineItem: [ { hidden: true } ]
+  NetWeight;
+  @UI.lineItem: [ { hidden: true } ]
+  WeightRequired;
+  @UI.lineItem: [ { hidden: true } ]
+  WeightSkip;
+  @UI.lineItem: [ { hidden: true } ]
+  InitWtDate;
+  @UI.lineItem: [ { hidden: true } ]
+  InitWtTime;
+  @UI.lineItem: [ { hidden: true } ]
+  FinalWtDate;
+  @UI.lineItem: [ { hidden: true } ]
+  FinalWtTime;
+  @UI.lineItem: [ { hidden: true } ]
+  VendorSlip;
+  @UI.lineItem: [ { hidden: true } ]
+  VendorGrossWeight;
+  @UI.lineItem: [ { hidden: true } ]
+  VendorTareWeight;
+  @UI.lineItem: [ { hidden: true } ]
+  Grn;
+  @UI.lineItem: [{ hidden: true }]
+  GrnYear;
+  @UI.lineItem: [ { hidden: true } ]
+  @UI.fieldGroup: [{ position: 40,  qualifier: 'tqHd2',label: 'Pre-GRN Qc Lot '  }]
+  PreGrnQc;
+  @UI.lineItem: [ { hidden: true } ]
+  Purpose;
+  @UI.lineItem: [ { hidden: true } ]
+  PersonConcerned;
+  @UI.lineItem: [ { hidden: true } ]
+  PersonArrived;
+  @UI.lineItem: [ { hidden: true } ]
+  ContactNumber;
+  @UI.lineItem: [ { hidden: true } ]
+  NumberOfPerson;
+  @UI.lineItem: [ { hidden: true } ]
+  ReturnDate;
+  @UI.lineItem: [ { hidden: true } ]
+  ReturnTime;
+  @UI.lineItem: [ { hidden: true } ]
+  @UI.fieldGroup: [{ position: 60,  qualifier: 'tqHd3',label: 'Driver Name '  }]
+  DriverName;
+  @UI.lineItem: [ { hidden: true } ]
+  @UI.fieldGroup: [{ position: 50,  qualifier: 'tqHd3',label: 'Driver Number '  }]
+  DriverNumber;
+  @UI.lineItem: [ { hidden: true } ]
+  Transporter;
+  @UI.lineItem: [ { hidden: true } ]
+  TransporterName;
+  @UI.lineItem: [ { hidden: true } ]
+  VehicleType;
+  @UI.lineItem: [ { hidden: true } ]
+  @UI.fieldGroup: [{ position: 50,  qualifier: 'tqHd2',label: 'Driver License No '  }]
+  DriverLic;
+  @UI.lineItem: [ { hidden: true } ]
+  @UI.fieldGroup: [{ position: 40,  qualifier: 'tqHd3',label: 'Remark '  }]
+  Remark;
+  @UI.lineItem: [ { hidden: true } ]
+  Visitor;
+}

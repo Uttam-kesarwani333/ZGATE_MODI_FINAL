@@ -1,0 +1,4 @@
+@EndUserText.label: 'QC Formula service'
+define service ZQM_SD_FORMULA_SER {
+  expose ZQM_C_FORMULA as Formula;
+}

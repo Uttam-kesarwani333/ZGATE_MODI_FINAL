@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service definition for GE Weighment'
+define service ZGE_SD_WEIGHMENT {
+  expose zge_c_head_wt as Weight;
+}

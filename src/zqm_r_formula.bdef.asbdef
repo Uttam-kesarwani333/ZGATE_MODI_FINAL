@@ -1,0 +1,31 @@
+managed implementation in class zbp_qm_r_formula unique;
+strict ( 2 );
+
+define behavior for ZQM_R_FORMULA alias Formula
+persistent table zqmt_qc_formula
+lock master
+authorization master ( instance )
+//etag master <field_name>
+early numbering
+{
+  create;
+  update;
+  delete;
+  field ( readonly ) sno;
+
+  mapping for zqmt_qc_formula corresponding
+    {
+      sno            = sno;
+      Werks          = werks;
+      Matkl          = matkl;
+      BaseQc         = base_Qc;
+      BaseQcKurztext = base_qc_kurztext;
+      DepKurztext    = dep_kurztext;
+      DepVerwmerkm   = dep_verwmerkm;
+      Kurztext       = kurztext;
+      OnAvg          = on_avg;
+      OnlyPost       = only_post;
+      Rejection      = rejection;
+      Verwmerkm      = verwmerkm;
+    }
+}

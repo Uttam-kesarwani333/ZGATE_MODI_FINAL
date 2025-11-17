@@ -1,0 +1,58 @@
+@Metadata.layer: #PARTNER
+@UI: {
+  headerInfo: { typeName: 'Item',
+                typeNamePlural: 'Items',
+                title: { type: #STANDARD, value: 'ItemNumber' } } }
+annotate entity zge_c_grn_item
+    with 
+{
+  @UI.facet: [ { id:            'Item',
+                purpose:       #STANDARD,
+                type:          #IDENTIFICATION_REFERENCE,
+                label:         'Item',
+                position:      10 }  ]
+
+  @UI.lineItem: [ { hidden: true } ]
+  GateNumber;
+  @UI.identification: [{ position: 10 }]
+  @UI.lineItem: [ { position: 10 } ]
+  ItemNumber;
+  @UI.lineItem: [ { hidden: true } ]
+  PurchasingDoc;
+  @UI.lineItem: [ { hidden: true } ]
+  PurchaseOrderItem;
+  @UI.lineItem: [{ position: 15 }]
+  @UI.identification: [{ position: 15 }]
+  @Consumption.valueHelpDefinition: [{
+      entity.name: 'ZGE_I_Product',
+      entity.element: 'Material'
+   }]
+  Material;
+  @UI.lineItem: [{ position: 20 }]
+  @UI.identification: [{ position: 20 }]
+  MaterialDescription;
+  @UI.lineItem: [{ position: 50 , label: 'Order Quantity'}]
+  @UI.identification: [{ position: 50, label: 'Order Quantity' }]
+  QtyOrdered;
+  @UI.lineItem: [{ position: 30, label: 'Quantity Received' }]
+  @UI.identification: [{ position: 30, label: 'Quantity Received' }]
+  QtyReceived;
+  @UI.lineItem: [{ position: 40 }]
+  @UI.identification: [{ position: 40 }] 
+  TotalGeQty;
+  @UI.lineItem: [{ position: 50 }]
+  @UI.identification: [{ position: 50 }]  
+  Meins;
+  @UI.lineItem: [{ position: 60 }]
+  @UI.identification: [{ position: 60 }]  
+  StorageLocation;
+  @UI.lineItem: [{ position: 70 }]
+  @UI.identification: [{ position: 70 }]  
+  Batch;    
+  @UI.lineItem: [ { hidden: true } ]
+  Uom;
+  @UI.lineItem: [ { hidden: true } ]
+  Werks;
+
+    
+}

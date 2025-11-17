@@ -1,0 +1,12 @@
+@EndUserText.label: 'Service definition for GE Report'
+define service ZGE_SD_GE_REPORT {
+  expose zge_c_ge_report as Report;
+  expose ZGE_I_Product     as Material;
+  expose I_Plant           as Plant;
+  expose I_Supplier        as Supplier;
+  expose zge_i_pohead      as PoHead;
+  expose zge_i_genum       as GeNum;
+  expose ZCDS_I_SALESORDER as SoHead;
+  expose zge_ce_typevh     as GeType;
+  expose zge_ce_statusvh   as GeStatus;
+}

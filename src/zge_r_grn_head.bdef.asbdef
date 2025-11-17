@@ -1,0 +1,66 @@
+unmanaged implementation in class zbp_ge_r_grn_head unique;
+strict ( 2 );
+
+define behavior for zge_r_grn_head alias Header
+//late numbering
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+//  delete;
+  field ( readonly ) GateNumber;
+  association _Items { create; }
+
+  mapping for zge_hdr control zge_s_hdr_x corresponding
+    {
+      GateNumber        = gate_number;
+      GateType          = gate_type;
+      GateStatus        = gate_status;
+      VehichleNo        = vehichle_no;
+      BillOfLanding     = bill_of_landing;
+      PurchasingDoc     = ebeln;
+      Supplier          = lifnr;
+      SupplierName      = supplier_name;
+      Customer          = kunnr;
+      plant             = werks;
+      Grn               = grn;
+      GrnYear           = grn_year;
+      GrnDocDate        = grn_doc_date;
+      GrnHeaderText     = grn_header_text;
+      GrnPostDate       = grn_post_date;
+      DeliveryNote      = delivery_note;
+      Remark            = remark;
+      PreGrnQc          = pre_grn_qc;
+      CreatedBy         = created_by;
+      CreatedOn         = created_on;
+    }
+}
+
+define behavior for zge_r_grn_item alias Item
+//late numbering
+lock dependent by _Head
+authorization dependent by _Head
+//etag master <field_name>
+{
+  update;
+//  delete;
+  field ( readonly ) GateNumber, ItemNumber;
+  association _Head;
+
+  mapping for zge_itm corresponding
+    {
+      GateNumber          = gate_number;
+      ItemNumber          = item_number;
+      PurchasingDoc       = ebeln;
+      PurchaseOrderItem   = ebelp;
+      Material            = matnr;
+      MaterialDescription = maktx;
+      StorageLocation     = storage_location;
+      QtyOrdered          = qty_ordered;
+      QtyReceived         = qty_received;
+      TotalGeQty          = total_ge_qty;
+    }
+
+}

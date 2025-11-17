@@ -1,0 +1,5 @@
+@MappingRole: true
+define role ZI_GateEntryMaterialGr {
+  grant select on ZI_GateEntryMaterialGr
+  where ( ) = ASPECT pfcg_auth ( 'S_TABU_NAM', ACTVT = '03', TABLE = 'ZI_GATEENTRYMATERIALGR' );
+}

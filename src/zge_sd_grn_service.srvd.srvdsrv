@@ -1,0 +1,12 @@
+@EndUserText.label: 'Service definition for GRN'
+define service Zge_sd_grn_service {
+  expose zge_c_grn_head as Header;
+  expose zge_c_grn_item as Item;
+  expose ZGE_I_Product     as Material;
+  expose I_Plant           as Plant;
+  expose I_Supplier        as Supplier;
+  expose zge_i_pohead      as PoHead;
+  expose zge_i_purchase    as PoItem;
+  expose zge_i_genum       as GeNum;
+  expose I_StorageLocation as StorageLocation;
+}

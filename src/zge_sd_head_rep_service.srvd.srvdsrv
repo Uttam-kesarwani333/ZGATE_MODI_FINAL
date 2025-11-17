@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service definition for GE Report'
+define service ZGE_SD_HEAD_REP_SERVICE {
+  expose ZGE_C_HEAD_REP as Header;
+  expose ZGE_C_ITEM_REP as Item;
+}

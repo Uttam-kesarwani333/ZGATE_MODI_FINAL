@@ -1,0 +1,10 @@
+@EndUserText.label: 'Service definition for GE Head Weight'
+define service Zge_sd_head_wt_service {
+  expose zge_c_head_wt     as Header;
+  expose I_Plant           as Plant;
+  expose I_Supplier        as Supplier;
+  expose zge_i_pohead      as PoHead;
+  expose zge_i_purchase    as PoItem;
+  expose zge_i_genum       as GeNum;
+  expose ZCDS_I_SALESORDER as SoHead;
+}

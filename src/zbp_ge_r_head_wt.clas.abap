@@ -1,0 +1,9 @@
+CLASS zbp_ge_r_head_wt DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zge_r_head_wt.
+protected section.
+private section.
+ENDCLASS.
+
+
+
+CLASS ZBP_GE_R_HEAD_WT IMPLEMENTATION.
+ENDCLASS.

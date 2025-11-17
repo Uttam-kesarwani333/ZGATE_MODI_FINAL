@@ -1,0 +1,20 @@
+projection;
+strict ( 2 );
+use side effects;
+
+define behavior for zge_c_head alias Header
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _Items { create; }
+}
+
+define behavior for zge_c_item alias Item
+{
+  use update;
+  use delete;
+
+  use association _Head;
+}

@@ -1,0 +1,8 @@
+projection;
+strict ( 2 );
+
+define behavior for zge_c_head_wt alias Weight
+{
+  use update;
+  use delete;
+}

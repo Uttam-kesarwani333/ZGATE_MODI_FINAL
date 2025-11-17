@@ -1,0 +1,9 @@
+CLASS zbp_qm_r_formula DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zqm_r_formula.
+protected section.
+private section.
+ENDCLASS.
+
+
+
+CLASS ZBP_QM_R_FORMULA IMPLEMENTATION.
+ENDCLASS.

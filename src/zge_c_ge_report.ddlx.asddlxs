@@ -1,0 +1,182 @@
+@Metadata.layer: #PARTNER
+@UI.headerInfo:{
+    typeName: 'Gate Entry Report',
+    typeNamePlural: 'Gate Entry Report'
+
+//    description: { value: '_Customer.FirstName' }
+ }
+annotate entity zge_c_ge_report with
+{
+  @UI.lineItem: [{ position: 10 }]
+  @UI.selectionField: [{ position: 10 }]
+  GateNumber;
+  @UI.lineItem: [{ position: 20 }]
+  ItemNumber;
+  @UI.lineItem: [{ position: 30, label: 'Purchase Order' }]
+    @UI.selectionField: [{ position: 20 }]
+  PurchasingDoc;
+  @UI.lineItem: [{ position: 40, label: 'PO Item' }]
+  PurchaseOrderItem;
+  @UI.lineItem: [{ position: 50 }]
+  Matnr;
+  @UI.lineItem: [{ position: 60 }]
+  Maktx;
+  @UI.lineItem: [{ position: 80 }]
+  StorageLocation;
+  @UI.lineItem: [{ position: 90 }]
+  Batch;
+  @UI.lineItem: [{ position: 100 }]
+  QtyOrdered;
+  @UI.lineItem: [{ position: 110 }]
+  QtyReceived;
+  @UI.lineItem: [{ position: 120 }]
+  TotalGeQty;
+  @UI.lineItem: [{ position: 130 }]
+  Meins;
+  @UI.lineItem: [{ position: 140 }]
+  Uom;
+  @UI.lineItem: [{ position: 150 }]
+  Tolerance;
+  @UI.lineItem: [{ position: 160 }]
+  Werks;
+  @UI.lineItem: [{ position: 170 }]
+  QtyOut;
+  @UI.lineItem: [{ position: 180 }]
+  QtyIn;
+  @UI.lineItem: [{ position: 190 }]
+  ItemRemark;
+  @UI.lineItem: [{ position: 200 }]
+  GateType;
+  @UI.lineItem: [{ position: 210 }]
+  GateStatus;
+  @UI.lineItem: [{ position: 220 }]
+  IsCancelled;
+  @UI.lineItem: [{ position: 230 }]
+  VehichleNo;
+  @UI.lineItem: [{ position: 240 }]
+  LrRrNo;
+  @UI.lineItem: [{ position: 250 }]
+  BillOfLanding;
+  @UI.lineItem: [{ position: 260 }]
+  VendorInvoiceNo;
+  @UI.lineItem: [{ position: 270 }]
+  VendorInvoiceDt;
+  @UI.lineItem: [{ position: 280 }]
+  GateInDate;
+  @UI.lineItem: [{ position: 290 }]
+  GateInTime;
+  @UI.lineItem: [{ position: 300 }]
+  GateOutDate;
+  @UI.lineItem: [{ position: 310 }]
+  GateOutTime;
+  @UI.lineItem: [{ position: 320 }]
+  SalesDocument;
+  @UI.lineItem: [{ position: 335 }]
+  Supplier;
+  @UI.lineItem: [{ position: 340 }]
+  SupplierName;
+  @UI.lineItem: [{ position: 350 }]
+  Customer;
+  @UI.lineItem: [{ position: 360 }]
+  CustomerName;
+  @UI.lineItem: [{ position: 370 }]
+  Plant;
+  @UI.lineItem: [{ position: 380 }]
+  PlantName;
+  @UI.lineItem: [{ position: 390 }]
+  CreatedBy;
+  @UI.lineItem: [{ position: 400 }]
+  CreatedOn;
+  @UI.lineItem: [{ position: 410 }]
+  CreationTime;
+  @UI.lineItem: [{ position: 420 }]
+  ReportingDate;
+  @UI.lineItem: [{ position: 430 }]
+  ReportingTime;
+  @UI.lineItem: [{ position: 440 }]
+  GrossWeight;
+  @UI.lineItem: [{ position: 450 }]
+  TareWeight;
+  @UI.lineItem: [{ position: 460 }]
+  PackingUnit;
+  @UI.lineItem: [{ position: 470 }]
+  NetWeight;
+  @UI.lineItem: [{ position: 480 }]
+  WeightRequired;
+  @UI.lineItem: [{ position: 490 }]
+  WeightSkip;
+  @UI.lineItem: [{ position: 500 }]
+  InitWtDate;
+  @UI.lineItem: [{ position: 510 }]
+  InitWtTime;
+  @UI.lineItem: [{ position: 520 }]
+  FinalWtDate;
+  @UI.lineItem: [{ position: 530 }]
+  FinalWtTime;
+  @UI.lineItem: [{ position: 540 }]
+  VendorSlip;
+  @UI.lineItem: [{ position: 550 }]
+  VendorGrossWeight;
+  @UI.lineItem: [{ position: 560 }]
+  VendorTareWeight;
+  @UI.lineItem: [{ position: 570 }]
+  Grn;
+  @UI.lineItem: [{ position: 580 }]
+  GrnYear;
+  @UI.lineItem: [{ position: 590,
+                   label: 'Inspection Lot' }]
+  PreGrnQc;
+  @UI.lineItem: [{ position: 600 }]
+  Purpose;
+  @UI.lineItem: [{ position: 610 }]
+  PersonConcerned;
+  @UI.lineItem: [{ position: 620 }]
+  PersonArrived;
+  @UI.lineItem: [{ position: 630 }]
+  ContactNumber;
+  @UI.lineItem: [{ position: 640 }]
+  NumberOfPerson;
+  @UI.lineItem: [{ position: 650 }]
+  ReturnDate;
+  @UI.lineItem: [{ position: 660 }]
+  ReturnTime;
+  @UI.lineItem: [{ position: 670 }]
+  DriverName;
+  @UI.lineItem: [{ position: 680 }]
+  DriverNumber;
+  @UI.lineItem: [{ position: 690 }]
+  Transporter;
+  @UI.lineItem: [{ position: 700 }]
+  TransporterName;
+  @UI.lineItem: [{ position: 710 }]
+  VehicleType;
+  @UI.lineItem: [{ position: 720 }]
+  DriverLic;
+  @UI.lineItem: [{ position: 730 }]
+  Remark;
+  @UI.lineItem: [{ position: 740 }]
+  CancelRemark;
+  @UI.lineItem: [{ position: 750 }]
+  Visitor;
+  @UI.lineItem: [{ position: 760 }]
+  RefDocNumber;
+   @UI.lineItem: [{ position: 770,
+                    label: 'Gate Pass Code' }] 
+   @EndUserText.label: 'Gate Pass Code'                         
+  GatePassCode;
+   @UI.lineItem: [{ position: 780,
+                    label: 'Weigh Ticket Number' }]   
+   @EndUserText.label: 'Weigh Ticket Number'                 
+  WeighTicketNo;
+  @UI.lineItem: [{ position: 790,label: 'Invoice No' }]
+  @EndUserText.label: 'Invoice No'
+  InvoiceNumber;  
+   @UI.lineItem: [{ position: 800,
+                    label: 'Initial WB code' }] 
+   @EndUserText.label: 'Initial WB code'   
+   InitWeighBridgeCode;
+   @UI.lineItem: [{ position: 810,
+                    label: 'Final WB code' }] 
+   @EndUserText.label: 'Final WB code'    
+   FinalWeighBridgeCode;
+}
